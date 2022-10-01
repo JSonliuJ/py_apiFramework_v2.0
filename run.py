@@ -40,23 +40,27 @@ suite=testloader.discover(case_path, pattern='test*.py')
 # runner.run(suite)
 st =str(int(time.time()))
 
-runner = TestRunner(
-                 suite=suite,
-                 filename="my_report{}.html".format(st),
-                 report_dir=report_path,
-                 title='接口测试报告',
-                 tester='testuser',
-                 desc="接口自动化测试",
-                 templates=2
-)
-runner.run()
+# runner = TestRunner(
+#                  suite=suite,
+#                  filename="my_report{}.html".format(st),
+#                  report_dir=report_path,
+#                  title='接口测试报告',
+#                  tester='testuser',
+#                  desc="接口自动化测试",
+#                  templates=2
+# )
+# runner.run()
 
 
 
-runner.send_email(
-                  host="smtp.qq.com",
-                  port=465,
-                  user="xxxx@qq.com",
-                  password="123456",
-                  to_addrs=["xxxxx@163.com"]
-)
+# runner.send_email(
+#                   host="smtp.qq.com",
+#                   port=465,
+#                   user="xxxx@qq.com",
+#                   password="123456",
+#                   to_addrs=["xxxxx@163.com"]
+# )
+
+from BeautifulReport import BeautifulReport
+runner = BeautifulReport(suite)
+runner.report(description='接口单元测试',report_dir=report_path,filename='beaufiful_report.html')

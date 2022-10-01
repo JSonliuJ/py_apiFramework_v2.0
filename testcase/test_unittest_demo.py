@@ -25,6 +25,7 @@ class TestUnittestDemo(unittest.TestCase):
         a = 1
         b = 2
         print("%s-> %s" % (self.__repr__, a + b))
+        self.assert_(a>b)
 
     def test_subtraction(self):
         a = 1
@@ -42,7 +43,7 @@ if __name__ == '__main__':
     # import unittest
     import os
     import time
-    from unittestreport.HTMLTestRunnerNew import HTMLTestRunner
+    from unittestreport import HTMLTestRunner
 
     # suite = unittest.defaultTestLoader.discover('./test_case', 'test*.py')
 

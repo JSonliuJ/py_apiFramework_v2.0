@@ -13,4 +13,4 @@ import unittest
 class TestDtt(unittest.TestCase):
     @ddt.data(*test_case)
     def test_001(self, case_data):
-        print(case_data)
+        self.assert_(case_data["age"]>=19)

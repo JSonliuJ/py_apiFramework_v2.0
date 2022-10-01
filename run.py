@@ -26,13 +26,14 @@ from unittestreport import TestRunner
 import time
 
 file_name=os.path.dirname(__file__)
-case_path =os.path.join(file_name,'test_case')
+case_path =os.path.join(file_name,'testcase')
 report_path =os.path.join(file_name,'report')
 
 
 #1、加载器，加载测试用例
 testloader =unittest.TestLoader()  #创建收集器
 #2、收集器，收集测试用例
+print(case_path)
 suite=testloader.discover(case_path, pattern='test*.py')
 #3、运行器,运行收集到的测试用例
 # runner =unittest.TextTestRunner()

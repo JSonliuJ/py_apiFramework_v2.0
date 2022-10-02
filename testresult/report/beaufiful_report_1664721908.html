@@ -7159,12 +7159,107 @@ body.skin-3 {
 
 
     var resultData = {
-    "testPass": 0,
-    "testResult": [],
+    "testPass": 5,
+    "testResult": [
+        {
+            "className": "TestDtt",
+            "methodName": "test_001_1",
+            "description": null,
+            "spendTime": "0.0199 s",
+            "status": "失败",
+            "log": [
+                "",
+                "Traceback (most recent call last):\n",
+                "  File \"C:\\Program Files\\Python38\\lib\\unittest\\case.py\", line 60, in testPartExecutor\n    yield\n",
+                "  File \"C:\\Program Files\\Python38\\lib\\unittest\\case.py\", line 676, in run\n    self._callTestMethod(testMethod)\n",
+                "  File \"C:\\Program Files\\Python38\\lib\\unittest\\case.py\", line 633, in _callTestMethod\n    method()\n",
+                "  File \"C:\\.virtualenv\\00pythonBase\\lib\\site-packages\\ddt.py\", line 220, in wrapper\n    return func(self, *args, **kwargs)\n",
+                "  File \"C:\\Users\\jieliu666\\python3_code\\sublime_text03\\14SoftwareTest\\python_project\\APITest\\python_apiTest\\py_apiFramework_v2.0\\testcase\\test_ddt.py\", line 16, in test_001\n    self.assert_(case_data[\"age\"]>=19)\n",
+                "  File \"C:\\Program Files\\Python38\\lib\\unittest\\case.py\", line 1410, in deprecated_func\n    return original_func(*args, **kwargs)\n",
+                "  File \"C:\\Program Files\\Python38\\lib\\unittest\\case.py\", line 765, in assertTrue\n    raise self.failureException(msg)\n",
+                "AssertionError: False is not true\n"
+            ]
+        },
+        {
+            "className": "TestDtt",
+            "methodName": "test_001_2",
+            "description": null,
+            "spendTime": "0.0 s",
+            "status": "成功",
+            "log": [
+                ""
+            ]
+        },
+        {
+            "className": "TestDtt",
+            "methodName": "test_001_3",
+            "description": null,
+            "spendTime": "0.0 s",
+            "status": "成功",
+            "log": [
+                ""
+            ]
+        },
+        {
+            "className": "TestUnittestDemo",
+            "methodName": "test_add",
+            "description": null,
+            "spendTime": "0.00798 s",
+            "status": "失败",
+            "log": [
+                "setUp method\n<bound method TestCase.__repr__ of <test_unittest_demo.TestUnittestDemo testMethod=test_add>>-> 3\ntearDown method\n",
+                "Traceback (most recent call last):\n",
+                "  File \"C:\\Program Files\\Python38\\lib\\unittest\\case.py\", line 60, in testPartExecutor\n    yield\n",
+                "  File \"C:\\Program Files\\Python38\\lib\\unittest\\case.py\", line 676, in run\n    self._callTestMethod(testMethod)\n",
+                "  File \"C:\\Program Files\\Python38\\lib\\unittest\\case.py\", line 633, in _callTestMethod\n    method()\n",
+                "  File \"C:\\Users\\jieliu666\\python3_code\\sublime_text03\\14SoftwareTest\\python_project\\APITest\\python_apiTest\\py_apiFramework_v2.0\\testcase\\test_unittest_demo.py\", line 28, in test_add\n    self.assert_(a>b)\n",
+                "  File \"C:\\Program Files\\Python38\\lib\\unittest\\case.py\", line 1410, in deprecated_func\n    return original_func(*args, **kwargs)\n",
+                "  File \"C:\\Program Files\\Python38\\lib\\unittest\\case.py\", line 765, in assertTrue\n    raise self.failureException(msg)\n",
+                "AssertionError: False is not true\n"
+            ]
+        },
+        {
+            "className": "TestUnittestDemo",
+            "methodName": "test_subtraction",
+            "description": null,
+            "spendTime": "0.0 s",
+            "status": "成功",
+            "log": [
+                "setUp method",
+                "<bound method TestCase.__repr__ of <test_unittest_demo.TestUnittestDemo testMethod=test_subtraction>>-> -1",
+                "tearDown method",
+                ""
+            ]
+        },
+        {
+            "className": "TestUnittestDemo",
+            "methodName": "test_sum",
+            "description": null,
+            "spendTime": "0.0 s",
+            "status": "成功",
+            "log": [
+                "setUp method",
+                "<bound method TestCase.__repr__ of <test_unittest_demo.TestUnittestDemo testMethod=test_sum>>-> 4950",
+                "tearDown method",
+                ""
+            ]
+        },
+        {
+            "className": "TestUnittestDemo02",
+            "methodName": "test_mul",
+            "description": null,
+            "spendTime": "0.0 s",
+            "status": "成功",
+            "log": [
+                "<bound method TestCase.__repr__ of <test_unittest_demo.TestUnittestDemo02 testMethod=test_mul>>-> 200",
+                ""
+            ]
+        }
+    ],
     "testName": "接口单元测试",
-    "testAll": 0,
-    "testFail": 0,
-    "beginTime": "2022-10-02 22:43:40",
+    "testAll": 7,
+    "testFail": 2,
+    "beginTime": "2022-10-02 22:45:09",
     "totalTime": "0s",
     "testSkip": 0,
     "testError": 0

@@ -27,7 +27,7 @@ import time
 
 file_name=os.path.dirname(__file__)
 case_path =os.path.join(file_name,'testcase')
-report_path =os.path.join(file_name,'report')
+report_path =os.path.join(file_name,'testresult','report')
 
 
 #1、加载器，加载测试用例
@@ -63,4 +63,4 @@ st =str(int(time.time()))
 
 from BeautifulReport import BeautifulReport
 runner = BeautifulReport(suite)
-runner.report(description='接口单元测试',report_dir=report_path,filename='beaufiful_report.html')
+runner.report(description='接口单元测试',report_dir=report_path,filename='beaufiful_report_{}.html'.format(st))

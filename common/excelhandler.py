@@ -25,12 +25,13 @@ class ExcelHandle:
     def read_tab_header(self,sheet_name):
         # 3.读取标题
         sheet = self._open_sheet(sheet_name)
-        tab_header = []
-        for i in sheet[1]:
-            tab_header.append(i.value)
+        # tab_header = []
+        # for i in sheet[1]:
+        #     tab_header.append(i.value)
+        tab_header = list(sheet.values)[0]
         return tab_header
     def read_all_data(self,sheet_name):
-        # 4.读取所有数据，
+        # 4.读取所有数据：方式1
         # 列表转字典：和header 进行zip
         global dict_data
         sheet = self._open_sheet(sheet_name)
@@ -39,12 +40,19 @@ class ExcelHandle:
         # 标题 header = sheet.rows[0]
         for row in rows[1:]:
             row_data = []
-            for cell in  row:
+            for cell in row:
                 row_data.append(cell.value)
                 dict_data = dict(zip(self.read_tab_header(sheet_name),row_data))
             all_data.append(dict_data)
         return all_data
 
+    def read_all_data_lc(self,sheet_name):
+        # 列表推导式
+        sheet = self._open_sheet(sheet_name)
+        rows = list(sheet.values)
+        tab_head = rows[0]
+        all_data = [dict(zip(tab_head,i)) for i in rows[1:]]
+        return all_data
     @staticmethod
     def write_back(file_name,sheet_name,row,column,write_value):
         '''
@@ -60,7 +68,9 @@ class ExcelHandle:
         wb.close()
 
 if __name__ == '__main__':
-    file_name  = ''
-    EH = ExcelHandle(file_name=file_name)
-    all_data = EH.read_all_data('register')
-    print(all_data)
+    from common.filehandle import test_data_path
+    EH = ExcelHandle(file_name=test_data_path)
+    # all_data = EH.read_all_data('register')
+    # print(all_data)
+    data = EH.read_all_data_lc('register')
+    print(data)
